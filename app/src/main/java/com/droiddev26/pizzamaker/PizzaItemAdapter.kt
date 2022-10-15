@@ -1,5 +1,6 @@
 package com.droiddev26.pizzamaker
 
+import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,8 @@ class PizzaItemAdapter(private val items: ArrayList<PizzaItem>) :
 
     // Holds the views for adding it to image and text
     class PizzaItemViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
+        inner class ListItemHolder(val view: View)
+
         val imageView: ImageView = itemView.findViewById(R.id.pizzaView)
         val text1: TextView = itemView.findViewById(R.id.titleTextView)
         val text2: TextView = itemView.findViewById(R.id.descriptionTextView)
@@ -28,16 +31,16 @@ class PizzaItemAdapter(private val items: ArrayList<PizzaItem>) :
     // binds the list items to a view
     override fun onBindViewHolder(holder: PizzaItemViewHolder, position: Int) {
 
-        val ItemsViewModel = items[position]
+        val itemsViewModel = items[position]
 
         // sets the image to the imageview from our itemHolder class
-        holder.imageView.setImageResource(ItemsViewModel.imageResource)
+        holder.imageView.setImageResource(itemsViewModel.imageResource)
 
         // sets the text to the textview from our itemHolder class
-        holder.text1.text = ItemsViewModel.text1
+        holder.text1.text = holder.itemView.context.getString(itemsViewModel.title)
 
         // sets the text to the textview from our itemHolder class
-        holder.text2.text = ItemsViewModel.text2
+        holder.text2.text = holder.itemView.context.getString(itemsViewModel.description)
 
     }
 
