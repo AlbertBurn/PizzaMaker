@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">PizzaMaker</string>
+    <string name="pizza1">Next level Margherita pizza</string>
+    <string name="pizza2">Pizza Margherita</string>
+    <string name="pizza3">Caramelised onion &amp; goat\'s cheese pizza</string>
+    <string name="pizza4">Homemade Turkish lahmacun</string>
+    <string name="pizza5">Superhealthy pizza</string>
+    <string name="pizza6">Frying pan pizza</string>
+    <string name="pizza7">Egg &amp; rocket pizzas</string>
+    <string name="pizza8">Sourdough pizza</string>
+    <string name="pizza9">Chicken tikka masala pizzas</string>
+    <string name="pizza10">Ultimate pizza Margherita</string>
+    <string name="pizza11">Pizza with homemade sauce</string>
+    <string name="pizza12">No yeast pizza dough</string>
+    <string name="pizza13">Rainbow pizzas</string>
+    <string name="pizza14">Pitta pizzas</string>
+    <string name="pizza1desc">Forget takeaways – you can’t beat a homemade Margherita pizza topped with fresh tomato sauce and melted cheese. Here\'s how to master this everyday classic…</string>
+    <string name="pizza2desc">Even a novice cook can master the art of pizza with our simple step-by-step guide. Bellissimo!</string>
+    <string name="pizza3desc">Make a veggie pizza that\'s healthy and low-fat instead of ordering a takeaway. This easy recipe uses goat\'s cheese for tang while the onions give it sweetness</string>
+    <string name="pizza4desc">Sometimes called "Turkish pizza", this crispy flatbread topped with spiced mincemeat is a popular street food across the Middle East</string>
+    <string name="pizza5desc">The quantities for this vegetarian pizza are generous, so if you have any leftovers, pop a few cold slices into your lunchbox for the next day</string>
+    <string name="pizza6desc">Not good for you? Think again, this easy to make pizza is low fat and full of calcium</string>
+    <string name="pizza7desc">Use seeded tortillas as pizza bases for a quick and healthy lunch - crack an egg in the centre and bake to boost protein intake</string>
+    <string name="pizza8desc">Make homemade sourdough pizza with a wonderfully chewy crust. Try our margherita recipe, then customise with your favourite toppings</string>
+    <string name="pizza9desc">Rustle up our spiced chicken pizzas using naan bread in just 20 minutes. To balance the heat, serve them with dollops of mango chutney and natural yogurt</string>
+    <string name="pizza10desc">Take your senses on a trip to Italy with this authentic pizza Margherita</string>
+    <string name="pizza11desc">Make pizza for the family with a homemade base and tomato sauce. The veggie recipe is perfect to get kids involved in cooking. Top with mozzarella and fresh basil</string>
+    <string name="pizza12desc">Try this easy no yeast recipe for pizza dough using just flour, baking powder, salt and oil. Recipe by Helen Hurrell, mum of BBC Good Food member Eleanor</string>
+    <string name="pizza13desc">Forget takeaway pizzas, encourage kids to eat a rainbow every day with this colourful recipe full of fresh flavours – guaranteed to please even fussy eaters</string>
+    <string name="pizza14desc">Little ones will love these fun and super-easy pizza\'s for lunch or a light supper</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>
