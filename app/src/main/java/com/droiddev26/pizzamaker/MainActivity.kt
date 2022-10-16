@@ -1,5 +1,6 @@
 package com.droiddev26.pizzamaker
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -137,6 +138,15 @@ class MainActivity : AppCompatActivity() {
         val adapter = PizzaItemAdapter(items)
         // Setting the Adapter with the recyclerview
         recyclerView.adapter = adapter
+
+
+        adapter.onItemClick = {
+            val intent = Intent(this, recipe_activity::class.java)
+            intent.putExtra("title", it.title)
+            intent.putExtra("text", it.recipe)
+            startActivity(intent)
+        }
+
     }
 
 }
