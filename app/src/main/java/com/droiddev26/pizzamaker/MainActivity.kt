@@ -3,10 +3,11 @@ package com.droiddev26.pizzamaker
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), PizzaItemAdapter.Listener {
 
     lateinit var recyclerView: RecyclerView
 
@@ -135,18 +136,21 @@ class MainActivity : AppCompatActivity() {
         )
 
         // This will pass the ArrayList to our Adapter
-        val adapter = PizzaItemAdapter(items)
+        val adapter = PizzaItemAdapter(items, this)
         // Setting the Adapter with the recyclerview
         recyclerView.adapter = adapter
 
+    }
 
-        adapter.onItemClick = {
-            val intent = Intent(this, recipe_activity::class.java)
-            intent.putExtra("title", it.title)
-            intent.putExtra("text", it.recipe)
-            startActivity(intent)
-        }
+    override fun OnClick (pizza: PizzaItem){
+
+        intent.putExtra("pizzaTitle", pizza.title)
+        intent.putExtra("pizzaRecipe", pizza.recipe)
+
+        val recipeIntent = Intent(this, recipe_activity::class.java)
+        startActivity(recipeIntent)
 
     }
 
 }
+

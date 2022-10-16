@@ -3,9 +3,6 @@ package com.droiddev26.pizzamaker
 import android.os.Parcel
 import android.os.Parcelable
 
-//data class PizzaItem(val imageResource: Int, val title: Int, val description: Int, val recipe: Int) {
-//}
-
 data class PizzaItem(val imageResource: Int, val title: Int, val description: Int, val recipe: Int) :Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),

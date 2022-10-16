@@ -5,26 +5,18 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.view.menu.MenuView.ItemView
 
-
 class recipe_activity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recipe)
 
-//        val recipeTitle = intent.getParcelableExtra<PizzaItem>("pizza")
-//        if (recipeTitle != null) {
-            val recipeTitleText: TextView = findViewById(R.id.titleRecipeText)
-            val recipeText: TextView = findViewById(R.id.recipeTextView)
-
-            var titleText = recipeTitleText
-            var recipeTextvar = recipeText
-
-
-        titleText.text = intent.extras?.getString("title")
-        recipeTextvar.text = intent.extras?.getString("text")
-
-
-//        }
+        val pizzaTitle = intent.getStringExtra("pizzaTitle").toString()
+        //val pizzaTitle = intent.extras?.getString("pizzaTitle")
+        val pizzaRecipe = intent.getStringExtra("pizzaRecipe").toString()
+        val pizzaTitleTextView: TextView = findViewById(R.id.titleRecipeText)
+        val pizzaRecipeTextView: TextView = findViewById(R.id.recipeTextView)
+        pizzaTitleTextView.setText(pizzaTitle)
+        pizzaRecipeTextView.setText(pizzaRecipe)
     }
-
 }

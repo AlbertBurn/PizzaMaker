@@ -1,8 +1,5 @@
 package com.droiddev26.pizzamaker
 
-import android.content.Context
-import android.content.Intent
-import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,10 +7,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class PizzaItemAdapter(private val items: ArrayList<PizzaItem>) :
+class PizzaItemAdapter(private val items: ArrayList<PizzaItem>, val listener: Listener) :
     RecyclerView.Adapter<PizzaItemAdapter.PizzaItemViewHolder>(){
-
+    var itemsViewModel: PizzaItem ?= null
     var onItemClick: ((PizzaItem) -> Unit)? = null
+
     // Holds the views for adding it to image and text
     class PizzaItemViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
 
@@ -33,25 +31,31 @@ class PizzaItemAdapter(private val items: ArrayList<PizzaItem>) :
     // binds the list items to a view
     override fun onBindViewHolder(holder: PizzaItemViewHolder, position: Int) {
 
-        val itemsViewModel = items[position]
+        itemsViewModel = items[position]
 
         // sets the image to the imageview from our itemHolder class
-        holder.imageView.setImageResource(itemsViewModel.imageResource)
+        holder.imageView.setImageResource(itemsViewModel!!.imageResource)
 
         // sets the text to the textview from our itemHolder class
-        holder.text1.text = holder.itemView.context.getString(itemsViewModel.title)
+        holder.text1.text = holder.itemView.context.getString(itemsViewModel!!.title)
 
         // sets the text to the textview from our itemHolder class
-        holder.text2.text = holder.itemView.context.getString(itemsViewModel.description)
+        holder.text2.text = holder.itemView.context.getString(itemsViewModel!!.description)
 
         holder.itemView.setOnClickListener {
-            onItemClick?.invoke(itemsViewModel)
-
+            listener.OnClick(itemsViewModel!!)
         }
     }
 
     // return the number of the items in the list
     override fun getItemCount(): Int {
         return items.size
+    }
+
+    interface Listener{
+        fun OnClick(pizza: PizzaItem){
+
+        }
+
     }
 }
