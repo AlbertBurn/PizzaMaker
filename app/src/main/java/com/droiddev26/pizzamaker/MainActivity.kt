@@ -144,10 +144,14 @@ class MainActivity : AppCompatActivity(), PizzaItemAdapter.Listener {
 
     override fun OnClick (pizza: PizzaItem){
 
-        intent.putExtra("pizzaTitle", pizza.title)
-        intent.putExtra("pizzaRecipe", pizza.recipe)
+        val titleVal = getString(pizza.title)
+        val recipeVal = getString(pizza.recipe)
 
         val recipeIntent = Intent(this, recipe_activity::class.java)
+//        recipeIntent.putExtra("pizzaTitle", pizza.title)
+//        recipeIntent.putExtra("pizzaRecipe", pizza.recipe)
+        recipeIntent.putExtra("pizzaTitle", titleVal)
+        recipeIntent.putExtra("pizzaRecipe", recipeVal)
         startActivity(recipeIntent)
 
     }

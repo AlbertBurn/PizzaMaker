@@ -1,5 +1,6 @@
 package com.droiddev26.pizzamaker
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +15,11 @@ class recipe_activity : AppCompatActivity() {
         val pizzaTitle = intent.getStringExtra("pizzaTitle").toString()
         //val pizzaTitle = intent.extras?.getString("pizzaTitle")
         val pizzaRecipe = intent.getStringExtra("pizzaRecipe").toString()
+//
+//        val pizzaTitle = intent.getIntExtra("pizzaTitle")
+//        //val pizzaTitle = intent.extras?.getString("pizzaTitle")
+//        val pizzaRecipe = intent.getIntExtra("pizzaRecipe")
+
         val pizzaTitleTextView: TextView = findViewById(R.id.titleRecipeText)
         val pizzaRecipeTextView: TextView = findViewById(R.id.recipeTextView)
         pizzaTitleTextView.setText(pizzaTitle)
