@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 class PizzaItemAdapter(private val items: ArrayList<PizzaItem>, val listener: Listener) :
     RecyclerView.Adapter<PizzaItemAdapter.PizzaItemViewHolder>(){
     var itemsViewModel: PizzaItem ?= null
-    var onItemClick: ((PizzaItem) -> Unit)? = null
+    //var onItemClick: ((PizzaItem) -> Unit)? = null
 
     // Holds the views for adding it to image and text
     class PizzaItemViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
@@ -31,19 +31,19 @@ class PizzaItemAdapter(private val items: ArrayList<PizzaItem>, val listener: Li
     // binds the list items to a view
     override fun onBindViewHolder(holder: PizzaItemViewHolder, position: Int) {
 
-        itemsViewModel = items[position]
+        val itemsViewModel = items[position]
 
         // sets the image to the imageview from our itemHolder class
-        holder.imageView.setImageResource(itemsViewModel!!.imageResource)
+        holder.imageView.setImageResource(itemsViewModel.imageResource)
 
         // sets the text to the textview from our itemHolder class
-        holder.text1.text = holder.itemView.context.getString(itemsViewModel!!.title)
+        holder.text1.text = holder.itemView.context.getString(itemsViewModel.title)
 
         // sets the text to the textview from our itemHolder class
-        holder.text2.text = holder.itemView.context.getString(itemsViewModel!!.description)
+        holder.text2.text = holder.itemView.context.getString(itemsViewModel.description)
 
         holder.itemView.setOnClickListener {
-            listener.OnClick(itemsViewModel!!)
+            listener.OnClick(itemsViewModel)
         }
     }
 
@@ -56,6 +56,5 @@ class PizzaItemAdapter(private val items: ArrayList<PizzaItem>, val listener: Li
         fun OnClick(pizza: PizzaItem){
 
         }
-
     }
 }
